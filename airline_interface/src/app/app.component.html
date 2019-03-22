@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="head_section">
+    <h1>Flight search Engine</h1>
+  </div>
+<section id="air-interface">
+    <div class="row">
+      <div class="col-3 air-flight-search bdr">
+        <air-search (searchSubmit)="getSearchEvent($event)" (refineSearchValue)="getrefineSearchValue($event)"> </air-search>
+      </div>
+      <div class="col-9 air-flight-search-result bdr">
+       <air-result [getSearchTriggered]="searchResultEvent" [recieveRefineSearchValue]="sendRefineSearchValue"></air-result>
+      </div>
+    </div>
+</section>
+<div class="footer">
+    &copy; Copyright 2018  Airlines
+</div>

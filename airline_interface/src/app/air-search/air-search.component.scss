@@ -1,0 +1,69 @@
+@import '../../stylings/variables';
+.air-search-result{
+    .bdr_section_onway{
+        border: 1px solid $app-gray-color;
+        border-radius: 15px 0px 0px 0px;
+        padding: 7px;
+        cursor: pointer;
+    }
+    .bdr_section-return{
+        border: 1px solid $app-gray-color;
+        border-radius: 0px 15px 0px 0px;
+        padding: 7px;
+        cursor: pointer;
+    }
+    .bgClorSection{
+        background-color:$app-skyblue-color;
+    }
+    .search-display-section{
+        border:1px solid $app-gray-color;
+        padding:25px;
+        .search_btn{
+            height: 27px;
+            width: 63px;
+            border-radius: 4px;
+            background: #03a9f44a;
+            margin-right:5px;
+        }
+        .invalid_msg{
+            color:$app-red-color;
+        }
+        .source_select{
+            height:25px;
+            width:98%;
+        }
+        .destination_select,
+        .passenger_select {
+            height:25px;
+            width:98%;
+        }
+        .form_search{
+            border: 1px solid $app-gray-color;
+            padding: 21px;
+        }
+    }
+    .row{
+        padding-top:12px;
+    }
+   
+   
+    .refine_flight_search{
+        border:1px solid $app-gray-color;
+        margin-top:25px;
+        padding: 21px;
+    }
+    
+    nouislider.ng2-nouislider{
+        width: 86%;
+        margin-left: 21px;
+    }
+    .mrgn-left-21{
+        margin-left: 28px;
+    }
+   
+    .max_range{
+        margin-left:137px;
+    }
+    
+   
+}

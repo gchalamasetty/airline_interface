@@ -1,0 +1,110 @@
+export const LocationSource=[
+    {
+        name: "Baltimore-Washington Intl Airport (BWI)",
+        city: "Baltimore",
+        country: "USA",
+        iata: "BWI",
+    },
+    {
+        name: "Hartsfield-Jackson Atlanta International Airport (ATL)",
+        city: "Atlanta",
+        country: "USA",
+        iata: "ATL",
+    },
+    {
+        name: "Washington Dulles International Airport (IAD)",
+        city: "Washington DC",
+        country: "USA",
+        iata: "IAD",
+    },
+    {
+        name: "O'Hare International Airport (ORD)-Chicago",
+        city: "Chicago",
+        country: "USA",
+        iata: "ORD",
+    },
+    {
+        name: "John F. Kennedy International Airport (JFK)-New York",
+        city: "New York",
+        country: "USA",
+        iata: "JFK",
+    },
+    {
+        name: "Los Angeles International Airport (LAX)",
+        city: "Los Angeles",
+        country: "USA",
+        iata: "LAX",
+    },
+    {
+        name: "George Bush Intercontinental Airport (IAH)-Houston",
+        city: "Houston",
+        country: "USA",
+        iata: "IAH",
+    },
+    {
+        name: "Minneapolis–Saint Paul International Airport (MSP)",
+        city: "Minneapolis",
+        country: "USA",
+        iata: "MSP",
+    },
+    {
+        name: "Detroit Metropolitan Airport (DTW)",
+        city: "Detroit",
+        country: "USA",
+        iata: "DTW",
+    },
+    {
+        name: "Dallas/Fort Worth International Airport (DFW)",
+        city: "Dallas",
+        country: "USA",
+        iata: "DFW",
+    },
+    {
+        name: "San Francisco International Airport (SFO)",
+        city: "San Francisco",
+        country: "USA",
+        iata: "SFO",
+    },
+    {
+        name: "Denver International Airport (DEN)",
+        city: "Denver",
+        country: "USA",
+        iata: "DEN",
+    },
+    {
+        name: "Philadelphia International Airport (PHL)",
+        city: "Philadelphia",
+        country: "USA",
+        iata: "PHL",
+    },
+    {
+        name: "Phoenix Sky Harbor International Airport (PHX)",
+        city: "Phoenix",
+        country: "USA",
+        iata: "PHX",
+    },
+    {
+        name: "Miami International Airport (MIA)",
+        city: "Miami",
+        country: "Florida",
+        iata: "MIA",
+    },
+    {
+        name: "Seattle–Tacoma International Airport (Sea-Tac)",
+        city: "Seattle",
+        country: "USA",
+        iata: "Sea-Tac",
+    },
+    {
+        name: "Logan International Airport (BOS)-Boston",
+        city: "Boston",
+        country: "USA",
+        iata: "BOS",
+    },
+    {
+        name: "Ted Stevens Anchorage International Airport (ANC)",
+        city: "Anchorage",
+        country: "USA",
+        iata: "ANC",
+    }
+]

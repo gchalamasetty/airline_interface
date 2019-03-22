@@ -1,0 +1,52 @@
+
+@import '../../stylings/variables';
+
+.air_result_main{
+
+.mrgn-left-9{
+    margin-left:9px;
+    margin-right: 9px;
+}
+.search_result_source{
+    border:1px solid $app-gray-color;
+    .dates_display{
+        padding-left:205px;
+    }
+}
+
+
+.search_data_result{
+    border:1px solid $app-gray-color;
+    .flight_img{
+        height: 152px;
+        width: 119px;
+        border: 1px solid $app-gray-color;
+    }
+    .btn-book{
+        width: 125px;
+        padding: 10px;
+        border-radius: 7px;
+        background: $app-brand-color;
+    }
+    .return_flight{
+        margin-top:55px;
+    }
+    
+}
+
+
+
+
+.no_data{
+    border: 1px solid $app-gray-color;
+    padding: 24px;
+    color:$app-red-color;
+    height: 600px;
+}
+
+.starting_info{
+  text-align: center;
+  padding:25px;
+  color:rgb(9, 49, 65);
+}
+}

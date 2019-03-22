@@ -1,0 +1,71 @@
+<div class="air-search-result">
+
+  <div class="row">
+    <div class="col-4 bdr_section_onway" [ngClass]="{'bgClorSection':(selectedDir==='oneWay')}" (click)="direction('oneWay')">
+      <span>One way</span>
+    </div>
+    <div class="col-5 bdr_section-return" [ngClass]="{'bgClorSection': (selectedDir==='return')}" (click)="direction('return')">
+      <span>Round Trip</span>
+    </div>
+  </div>
+  <div class="search-display-section">
+
+    <form class="form_search" [formGroup]="searchForm" novalidate (ngSubmit)="searchFlights(searchForm.value,searchForm.valid)"
+      ngNativeValidate>
+      <div class="row" *ngIf="(searchForm.invalid || formInvalid) && submitted">
+        <p class="invalid_msg">{{errorMsg}}</p>
+      </div>
+      <div class="row">
+        <select class="source_select" name="source" formControlName="source" id='source'>
+          <option value="">Enter Origin City</option>
+          <option *ngFor="let mt of locationList" [ngValue]="mt">{{mt.name}}
+          </option>
+        </select>
+      </div>
+      <div class="row">
+        <select name="destination" class="destination_select" formControlName="destination" id='destination'>
+          <option value="">Enter Destination City</option>
+          <option *ngFor="let mt of locationList" [ngValue]="mt">{{mt.name}}
+          </option>
+        </select>
+      </div>
+      <div class="row">
+        <!-- <input type="date" placeholder="Depature Date" formControlName="dapartureDate" id = "dapartureDate"> -->
+        <my-date-picker name="mydate" [placeholder]="'Daparture Date'" [options]="myDatePickerOptions" formControlName="dapartureDate"></my-date-picker>
+      </div>
+      <div class="row" *ngIf="(selectedDir==='return')">
+        <!-- <input type="date" placeholder="Return Date" formControlName="returnDate" id="returnDate"> -->
+        <my-date-picker name="mydate" [placeholder]="'ReturnDate Date'" [options]="myDatePickerOptions" formControlName="returnDate"></my-date-picker>
+      </div>
+      <div class="row">
+        <select name="passengers" class="passenger_select" formControlName="passengers" id='passengers'>
+          <option value="">Passengers</option>
+          <option *ngFor="let mt of totalPassengers" [ngValue]="mt">{{mt}}
+          </option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+        <button class="search_btn" type="submit">Search</button>
+        <button class="search_btn" type="reset">Reset</button>
+      </div>
+      </div>
+    </form>
+    
+    <div class="row refine_flight_search">
+      <h5 class="mrgn-left-21">Refine Flight Search By Price</h5>
+      <nouislider [connect]="true" [min]="0" [max]="5000" [step]="1" [(ngModel)]="someRange" (ngModelChange)="onChangeRange($event)"></nouislider>
+      <div class="row">
+        <div class="col-8">
+          <span>${{someRange[0]}}</span>
+        </div>
+        <div class="col-4">
+          <span class="">${{someRange[1]}}</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

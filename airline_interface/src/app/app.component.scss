@@ -1,0 +1,18 @@
+
+.air-interface{
+    height: 725px;
+    overflow: scroll;
+}
+.air-flight-search , .air-flight-search-result{
+    max-height: 728px;
+    overflow-y: scroll;
+    min-height: 728px;
+}
+
+.head_section{
+    border: 1px solid gray;
+    text-align: center;
+    background: #252525;
+    color: #ffff;
+}
+

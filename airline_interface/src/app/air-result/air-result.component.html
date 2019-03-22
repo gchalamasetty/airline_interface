@@ -1,0 +1,112 @@
+<div class="air_result_main">
+  <div *ngIf="sharedService?.searchObject?.source" class="row search_result_source">
+    <div class="">
+    <div class="col-6">
+        <h3>
+            <span>{{sharedService.searchObject?.source?.city}}</span>
+            <span *ngIf="sharedService.searchObject?.destination" class="mrgn-left-9">></span>
+            <span >{{sharedService.searchObject?.destination?.city}}</span>
+            <span *ngIf="sharedService.searchObject?.destination && (sharedService.selectedDir==='return')" class="mrgn-left-9">></span>
+            <span *ngIf="(sharedService.selectedDir==='return')">{{sharedService.searchObject?.source?.city}}</span>
+          </h3>
+    </div>
+    <div class="col-6 dates_display" *ngIf="sharedService.searchObject?.dapartureDate">
+       <div class="row">
+         <span>Depart:<span>{{sharedService.searchObject?.dapartureDate | date:'mediumDate'}}</span></span>
+       </div>
+       <div class="row" *ngIf="(sharedService.selectedDir==='return')">
+          <span>Return:<span>{{sharedService.searchObject?.returnDate | date:'mediumDate'}}</span></span>
+       </div>
+    </div>
+   </div>
+  </div>
+  <div class="starting_info" *ngIf="(sharedService.selectedDir === '')">
+    <h2>Welcome to Airlines </h2>
+     <p>Please search for your flight </p>
+
+  </div>
+
+  <!-- One Way search data -->
+  <div *ngIf="sharedService.selectedDir === 'oneWay'">
+  <div class="row search_data_result"  *ngFor="let data of filteredData">
+     <div class="col-8">
+        <div class="row">
+         <h3><span>$: </span>{{data.cost | number:'3.2-2'}}</h3> 
+        </div>
+        <small>{{data.flightName}}</small>
+        <div class="row">
+            <h3><span>{{data.source}}</span><span class="mrgn-left-9"> ></span><span>{{data.destination}}</span></h3> 
+        </div>
+        <div class="row">
+          <div><span>Depart:</span> <span>{{getTime(data.departure_time)}}</span></div>
+          <div><span>Arrive:</span> <span>{{getTime(data.arrival_time)}}</span></div>
+        </div>
+     </div>
+     <div class="col-4">
+        <div class="row">
+          <!-- /Users/devendher.macha/Documents/pj/airline-interface-angular/src/assets/flight.jpeg -->
+          <img class='flight_img' src="../../assets/flight.jpeg"/>
+        </div>
+        <div class="row ">
+          <button class="btn-book">Book this flight</button>
+        </div>
+     </div>
+  </div>
+  <div class="row no_data" *ngIf="filteredData.length===0">
+    <h3>There is no flight available for this search</h3>
+    <h3>Please make your journey for alternative dates</h3>
+  </div>
+</div>
+  <!-- Two Way search data -->
+  <div *ngIf="sharedService.selectedDir === 'return'">
+  <div class="row search_data_result"  *ngFor="let data of filteredData">
+    <div *ngFor = "let dataReturn of returnTicketCheck">
+      <div *ngIf="checkWithRefinePrice(data,dataReturn)">
+      <div class="col-8">
+        <div class="col-4">
+         <div class="row">
+          <h3><span>$: </span>{{getTotalAmount(data,dataReturn) | number:'3.2-2'}}</h3> 
+         </div>
+         <small>{{data.flightName}}</small>
+         <div class="row">
+             <h3><span>{{data.source}}</span><span class="mrgn-left-9"> ></span><span>{{data.destination}}</span></h3> 
+         </div>
+         <div class="row">
+           <div><span>Depart:</span> <span>{{getTime(data.departure_time)}}</span></div>
+           <div><span>Arrive:</span> <span>{{getTime(data.arrival_time)}}</span></div>
+         </div>
+        </div>
+        <div class="col-4">
+        <!--  -->
+        <div class="row return_flight">
+            
+           </div>
+           <small>{{dataReturn.flightName}}</small>
+           <div class="row">
+               <h3><span>{{dataReturn.source}}</span><span class="mrgn-left-9"> ></span><span>{{dataReturn.destination}}</span></h3> 
+           </div>
+           <div class="row">
+             <div><span>Depart:</span> <span>{{getTime(dataReturn.departure_time)}}</span></div>
+             <div><span>Arrive:</span> <span>{{getTime(dataReturn.arrival_time)}}</span></div>
+           </div>
+        <!--  -->
+        </div>
+      </div>
+      <div class="col-4">
+         <div class="row">
+           <img class='flight_img' src="../../assets/flight.jpeg"/>
+         </div>
+         <div class="row ">
+           <button class="btn-book">Book this flight</button>
+         </div>
+      </div>
+      <!--  -->
+      </div>
+    </div>
+   </div>
+   <div class="row no_data" *ngIf="(returnTicketCheck.length===0) || (no_data_found)">
+     <h3>There is no flight available for this search</h3>
+     <h3>Please make your journey for alternative dates</h3>
+   </div>
+  </div>
+</div>
